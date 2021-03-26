@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		main{
+			display: flex;
+
+		}
+		  header{
+		
+      display: flex;
+    }
+   .form_sender_email{
+   	margin-top: 50px;
+   	border: 2px;
+   	border-radius: 5px;
+   	height: 550px;
+   	width: 425px;
+   	font-size: 20px;
+   	padding: 52px 44px;
+   	box-shadow: 0 0 10px rgba(0,0,0,1);
+   	margin-left: 50px;
+
+   }
+
+   .button_send{
+   		width: 377px;
+   		height: 48px;
+   		border-radius: 12px;
+   		font-size: 20px;
+   		margin: 20px;
+   }
+   .button_send:hover{
+    color: white;
+  	background-color: #0a043c;
+  }
+   .info_team{
+   	width: 500px;
+   	height: 500px;
+   	font-size: 20px;
+   	margin-top: 100px;
+   margin-left: 40px;
+   }
+   .text_send{
+   	width: 377px;
+   	height: 110px;
+   	border-radius: 10px ;
+   }
+   input,select{
+   	width: 377px;
+   	height: 48px;
+   	border-radius: 10px ;
+   }
+   label{
+   	font-size: 25px;
+   }
+   .in_text{
+   	margin: 20px;
+   }
+
+
+	</style>
+</head>
+<body>
+	<header>
+    
+  </header>
+  <main >
+  	<div class="form_sender_email">
+  		<form action={{url_for('send_feedback')}} method = post>
+  			<div class = "in_text">
+  				<label>Пошта:</label></br>
+  				<input type = "text" name="email_feedback" required></br>
+  			</div>
+  			<div class = "in_text">
+  				<label>Імя:</label></br>
+  				<input type = "text" name = "Name" required></br>
+  			</div>
+        <div class = "in_text">
+          <label>Тема звернення:</label></br>
+          <select name = "subject_feedback" required>
+            <option>Проблема з додатком</option>
+            <option>Проблема з апаратним забезпечення</option>
+            <option>Долучитись до команди</option>
+            <option>Стати пртнером</option>
+          </select>
+        </div>
+  			<div class = "in_text">
+  				<label>Опис запитання:</label></br>
+  				<textarea type="text" name ="content" class = "text_send" required></textarea></br>
+  			</div>
+  			<input type="submit" value="Відправити" class="button_send">
+  		</form>
+  	</div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
